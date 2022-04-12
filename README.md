@@ -1,4 +1,16 @@
-# Test
+# Intro
+
+When using `logtail` `fluentd` plugin: <https://docs.logtail.com/log-forwarding/fluentd> only some logs are saved/sent to Logtail.
+
+Below images show console output, and what is being logged in Logtail. It's every third, sometimes, every second, sometimes every fifth, I see no rule.
+
+For testing purposes I have created an alternative config, where `fluentd` saves data to file, stdout and sends to Logtail, and again, Logtail is missing most of the events.
+
+![iTerm2 output](https://raw.githubusercontent.com/jkulak/logtail-fluentd-plugin-test/media/iterm.png)
+
+![Logtail view](https://raw.githubusercontent.com/jkulak/logtail-fluentd-plugin-test/media/logtail.png)
+
+## Test
 
 1. `docker build -t fluentd-server .` - build fluentd image (official)
 1. `docker run -ti --rm -p 24224:24224 -v $(pwd)/etc:/fluentd/etc fluentd-server` - run fluentd container
